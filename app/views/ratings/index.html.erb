@@ -1,3 +1,14 @@
 <h2>List of ratings</h2>
 
-<p>to be completed...</p>
+<div id="ratings">
+    <ul>
+    <% @ratings.each do |rating| %>
+        <li> <%= render rating %> </li>
+    <% end %>
+    </ul>
+</div>
+
+
+
+
+
