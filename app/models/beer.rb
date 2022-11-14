@@ -6,4 +6,10 @@ class Beer < ApplicationRecord
         return self.ratings.average(:score)
     end
 
+    def to_s
+        name = self.name
+        brewery_name = self.brewery.name
+        "#{name}, #{brewery_name}"
+    end
+
 end
