@@ -74,8 +74,11 @@ class BreweriesController < ApplicationController
     def authenticate
       admin_accounts = { "pekka" => "beer", "arto" => "foobar", "matti" => "ittam", "vilma" => "kangas" }
    
-      authenticate_or_request_with_http_basic do |username, password| binding.pry
-        # do something here
+      authenticate_or_request_with_http_basic do |username, password|
+
+        confirmed = admin_accounts[username] == password
+
       end
+      return :confirmed
     end
   end
